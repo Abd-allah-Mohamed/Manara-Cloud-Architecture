@@ -27,7 +27,7 @@ When a client uploads an image to a source S3 bucket, a Lambda function is trigg
   - Lambda (create, invoke)  
   - CloudWatch (logging)
 - AWS CLI installed and configured
-- Node.js / Python (depending on Lambda runtime)
+- Python (Lambda function)
 
 ---
 
@@ -46,7 +46,7 @@ aws s3 mb s3://processed-image-bucket
 ---
 
 ### 2️⃣ Write the Lambda Function
-- Implement your image processing logic (e.g., using [Pillow](https://pillow.readthedocs.io/) for Python or [Sharp](https://sharp.pixelplumbing.com/) for Node.js).  
+- Implement your image processing logic (e.g., using [Pillow](https://pillow.readthedocs.io/) for Python).  
 - Make sure your code:
   - Reads the image from the source bucket.
   - Processes it (resize, compress, etc.).
