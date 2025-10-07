@@ -111,6 +111,7 @@ aws s3 ls s3://processed-bucket-name/
 Serverless-Image-Processing-with-S3-and-Lambda/
 │
 ├── lambda_function.py     # Lambda image processing code
+├── requirements.txt       # Dependencies
 ├── README.md              # Project documentation
 └── architecture.png       # Architecture diagram
 ```
