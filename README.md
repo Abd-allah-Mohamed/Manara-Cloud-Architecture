@@ -46,7 +46,7 @@ aws s3 mb s3://processed-image-bucket
 ---
 
 ### 2️⃣ Write the Lambda Function
-- Implement your image processing logic (e.g., using [Pillow](https://pillow.readthedocs.io/) for Python).  
+- Implement your image processing logic (using [Pillow](https://pillow.readthedocs.io/) for Python).  
 - Make sure your code:
   - Reads the image from the source bucket.
   - Processes it (resize, compress, etc.).
