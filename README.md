@@ -8,7 +8,7 @@ When a client uploads an image to a source S3 bucket, a Lambda function is trigg
 
 ## Architecture
 
-![Architecture Diagram](Serverless-Image-Processing-with-S3-and-Lambda.png)
+![Architecture Diagram](Serverless-Image-Processing-With-S3-and-Lambda.png)
 
 **Workflow Steps:**
 
@@ -65,7 +65,7 @@ zip -r lambda-package.zip .
 aws lambda create-function \
   --function-name imageProcessor \
   --runtime python3.10 \
-  --role arn:aws:iam::<account-id>:role/<lambda-execution-role> \
+  --role arn:aws:iam::account-id:role/ServerlessImageProcessingRole \
   --handler lambda_function.lambda_handler \
   --zip-file fileb://lambda-package.zip
 ```
