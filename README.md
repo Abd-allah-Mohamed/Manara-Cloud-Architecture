@@ -108,7 +108,7 @@ aws s3 ls s3://processed-bucket-name/
 
 ## Folder Structure
 ```
-Serverless-Image-Processing-with-S3-and-Lambda/
+Manara-Cloud-Architecture/
 │
 ├── lambda_function.py     # Lambda image processing code
 ├── requirements.txt       # Dependencies
