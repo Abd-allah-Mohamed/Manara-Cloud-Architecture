@@ -12,9 +12,9 @@ When a client uploads an image to a source S3 bucket, a Lambda function is trigg
 
 **Workflow Steps:**
 
-1. The client uploads an image to the **source S3 bucket** (`source-bucket`).
+1. The client uploads an image to the **source S3 bucket** (`source-image-bucket`).
 2. An **S3 event trigger** notifies a Lambda function of the new object.
-3. The **Lambda function** processes the image (e.g., resize, watermark, convert format) and saves it to the **destination S3 bucket** (`processed-bucket`).
+3. The **Lambda function** processes the image (e.g., resize, watermark, convert format) and saves it to the **destination S3 bucket** (`processed-image-bucket`).
 4. The client retrieves the processed image from the destination bucket.
 
 ---
@@ -39,8 +39,8 @@ When a client uploads an image to a source S3 bucket, a Lambda function is trigg
 
 Example using AWS CLI:
 ```bash
-aws s3 mb s3://source-bucket-name
-aws s3 mb s3://processed-bucket-name
+aws s3 mb s3://source-image-bucket
+aws s3 mb s3://processed-image-bucket
 ```
 
 ---
@@ -80,7 +80,7 @@ aws lambda create-function \
 AWS CLI example:
 ```bash
 aws s3api put-bucket-notification-configuration \
-  --bucket source-bucket-name \
+  --bucket source-image-bucket \
   --notification-configuration '{
     "LambdaFunctionConfigurations": [
       {
@@ -96,12 +96,12 @@ aws s3api put-bucket-notification-configuration \
 ### 5️⃣ Test the Workflow
 - Upload an image to the source bucket:
 ```bash
-aws s3 cp sample.jpg s3://source-bucket-name/
+aws s3 cp sample.jpg s3://source-image-bucket/
 ```
 
 - Check the destination bucket for the processed image:
 ```bash
-aws s3 ls s3://processed-bucket-name/
+aws s3 ls s3://processed-image-bucket/
 ```
 
 ---
@@ -132,7 +132,7 @@ To avoid unwanted charges:
    ```
 2. Remove S3 buckets:
    ```bash
-   aws s3 rb s3://source-bucket-name --force
-   aws s3 rb s3://processed-bucket-name --force
+   aws s3 rb s3://source-image-bucket --force
+   aws s3 rb s3://processed-image-bucket --force
    ```
 
