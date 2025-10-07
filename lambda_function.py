@@ -16,6 +16,7 @@ def lambda_handler(event, context):
     - Download image from source bucket
     - Resize it
     - Upload processed image to destination bucket
+    
     """
 
     # Get the uploaded file name from the event
